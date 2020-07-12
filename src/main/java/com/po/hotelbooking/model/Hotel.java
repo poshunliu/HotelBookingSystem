@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.UUID;
 
@@ -12,8 +13,11 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Hotel extends EntityWithUUID{
+    @Column(name = "hotel_name")
     private String hotelName;
+    @Column(name = "description")
     private String description;
+    @Column(name = "company_id")
     private UUID companyId;
 
     public String getHotelName() {
