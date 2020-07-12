@@ -5,23 +5,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.repository.Query;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.UUID;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "room")
 public class Room extends EntityWithUUID{
-    @Query(name = "room_name")
+    @Column(name = "room_name")
     private String roomName;
-    @Query(name = "description")
+    @Column(name = "description")
     private String description;
-    @Query(name = "hotel_id")
+    @Column(name = "hotel_id")
     private UUID hotelId;
-    @Query(name = "room_type_id")
+    @Column(name = "room_type_id")
     private UUID roomTypeId;
-    @Query(name = "current_price")
+    @Column(name = "current_price")
     private Integer currentPrice;
 
     public String getRoomName() {

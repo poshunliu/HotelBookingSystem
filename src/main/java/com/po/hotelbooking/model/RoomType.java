@@ -5,12 +5,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "room_type")
 public class RoomType extends EntityWithUUID {
     @Column(name = "type_name")
     private String typeName;
