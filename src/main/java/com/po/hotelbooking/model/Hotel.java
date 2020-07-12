@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import java.util.UUID;
 
 @Entity
 @Data
@@ -13,9 +14,7 @@ import javax.persistence.Entity;
 public class Hotel extends EntityWithUUID{
     private String hotelName;
     private String description;
-    private int companyId;
-    private int categoryId;
-    private boolean status;
+    private UUID companyId;
 
     public String getHotelName() {
         return hotelName;
@@ -33,27 +32,11 @@ public class Hotel extends EntityWithUUID{
         this.description = description;
     }
 
-    public int getCompanyId() {
+    public UUID getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(int companyId) {
+    public void setCompanyId(UUID companyId) {
         this.companyId = companyId;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public void setStatus(boolean status) {
-        this.status = status;
     }
 }
